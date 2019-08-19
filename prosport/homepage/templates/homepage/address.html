@@ -1,0 +1,10 @@
+{% extends "homepage/wrapper.html" %}
+
+{% block content %}
+
+<h3>Наши адреса:</h3>
+
+ {% for val in addresses %}
+  <p>{{val}}</p>
+ {% endfor %}
+{% endblock %}
