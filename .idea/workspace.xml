@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f443a8b2-eb16-4c6f-855c-a663ffab1883" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/prosport/homepage/migrations/0004_item.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/homepage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/homepage/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/homepage/templates/homepage/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/homepage/templates/homepage/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/homepage/templates/homepage/wrapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/homepage/templates/homepage/wrapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/homepage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/homepage/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/homepage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/homepage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/prosport/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/prosport/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prosport/prosport/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prosport/prosport/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prosport/product/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="38">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -77,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prosport/homepage/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
@@ -85,15 +77,6 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prosport/homepage/templates/homepage/product.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -252,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566916979358</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="3rd">
+      <created>1566939452956</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566939452956</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -266,7 +256,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1315" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1854714" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -292,7 +281,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2nd" />
-    <option name="LAST_COMMIT_MESSAGE" value="2nd" />
+    <MESSAGE value="3rd" />
+    <option name="LAST_COMMIT_MESSAGE" value="3rd" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/prosport/manage.py">
@@ -414,16 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prosport/homepage/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prosport/homepage/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -441,13 +421,6 @@
           <folding>
             <element signature="n#style#0;n#h3#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prosport/homepage/templates/homepage/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -490,10 +463,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prosport/product/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prosport/homepage/templates/homepage/product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prosport/homepage/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
