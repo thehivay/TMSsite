@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!--    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">-->
 <!--    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">  или так без jinja2-->
-<!--    <link rel="stylesheet" href="{% static 'css/style-prosport.css' %}" type="text/css"> почему-то не работает-->
 
     <title>{% block title %}Prosport site{% endblock %}</title>
     <!--или так можно - вид в css-->
@@ -60,25 +59,39 @@
   </div>
 </div>
 
- <div class="jumbotron" >
-    <div class="container">
-        <p>
-            <a href="/" class="btn btn-success btn-lg">Главная страница</a>
-            <a href="/news" class="btn btn-primary btn-lg">Узнать больше &raquo; </a>
-            <a href="/address" class="btn btn-info btn-lg">Контакты</a>
-        </p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 order-1 order-lg-1">
+            <a href="/" class="list-group-item list-group-item-action list-group-item-dark"><h2>Meню</h2></a>
+            {% for product in products %}
+            <a href="#" class="list-group-item list-group-item-action"><h5>{{product.name}}</h5></a>
+            {% endfor %}
+        </div>
+        <div class="col order-2 order-lg-1">
+            <p>
+                <a href="/" class="btn btn-warning btn-lg">Главная</a>
+                <a href="/address" class="btn btn-warning btn-lg">О компании</a>
+                <a href="/address" class="btn btn-warning btn-lg">Акции</a>
+                <a href="/address" class="btn btn-warning btn-lg">Доставка и оплата</a>
+                <a href="/address" class="btn btn-warning btn-lg">Контакты</a>
+            </p>
 
-        {% block content %}
-        {% endblock %}
+            <div class="row">
+                {% block content %}
 
+                {% endblock %}
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="container">
+    <div class="row">
+        <div class="container">
 <!--    <img src="{% static 'mainApp/image/mercedes.png' %}" class="img-thumbnail">-->
-    <hr>
-    <p style="color:white">&copy; Все права защищены 2019</p>
-  </div>
+            <hr>
+            <p style="color:white">&copy; Все права защищены 2019</p>
+        </div>
+    </div>
+</div>
+
 
        <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

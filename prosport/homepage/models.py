@@ -1,9 +1,56 @@
+from django.db import models
+from django.db.models.signals import pre_save
+# slugify - это функция берет имя и преображает в формат slug:
+# >>>slugify(' Joel is a slug ')
+# 'joel-is-a-slug'
+from django.utils.text import slugify
+from transliterate import translit
 # Create your models here.
 
-from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True)    # чтоб поле заполнения ссылки можно было оставлять свободным
+
+    def __str__(self):          #метод, чтоб правильно отображалось в админке название Протеины, а неProducts(object1)
+        return self.name
 
 
-class Products(models.Model):
-    name = models.CharField
-    slug = models.SlugField
+def pre_save_product_slug(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        slug = slugify(translit(instance.name, reversed=True))
+        instance.slug = slug
 
+
+pre_save.connect(pre_save_product_slug, sender=Product)     #чтоб slug работал присоединяем его к Product
+
+
+class Brand(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Item(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    brand = models.ForeignKey('Brand', on_delete=models.CASCADE)
+    description = models.TextField()
+    image = models.ImageField()
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    available = models.BooleanField(default=True)
+    new_item = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+
+def pre_save_item_slug(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        slug = slugify(instance.title)
+        instance.slug = slug
+
+
+pre_save.connect(pre_save_item_slug, sender=Item)
