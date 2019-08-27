@@ -15,9 +15,18 @@ def index(request):
 
 def address(request):
     products = Product.objects.all()
-    items = Item.objects.all()
-    context = {'products': products, 'items': items}
-    return render(request, 'homepage/home.html', context)
+    context = {'products': products}
+    return render(request, 'homepage/address.html', context)
 
 
+def product(request, product_slug):            # переход по ссылке
+    products = Product.objects.get(product_slug)
+    context = {'products': products}
+    return render(request, 'homepage/product.html', context)
+
+
+def item(request, item_slug):
+    items = Item.objects.get(item_slug)
+    context = {'items': items}
+    return render(request, 'homepage/item.html', context)
 

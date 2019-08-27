@@ -5,15 +5,25 @@ from django.db.models.signals import pre_save
 # 'joel-is-a-slug'
 from django.utils.text import slugify
 from transliterate import translit
-# Create your models here.
+from django.urls import reverse   # функция для перехода по продуктам
+
+
+class ProductManager(models.Manager):
+
+    def all(self, *args, **kwargs):
+        return super(ProductManager, self).get_queryset()
 
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(blank=True)    # чтоб поле заполнения ссылки можно было оставлять свободным
+    objects = ProductManager()
 
     def __str__(self):          #метод, чтоб правильно отображалось в админке название Протеины, а неProducts(object1)
         return self.name
+
+    def get_absolute_url(self):             #переход по ссылке
+        return reverse('product_detail', kwargs={'slug': self.slug})
 
 
 def pre_save_product_slug(sender, instance, *args, **kwargs):
@@ -32,6 +42,12 @@ class Brand(models.Model):
         return self.name
 
 
+class ItemManager(models.Manager):
+
+    def all(self, *args, **kwargs):
+        return super(ItemManager, self).get_queryset().filter(available=True, new_item=True)
+
+
 class Item(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(blank=True)
@@ -42,9 +58,13 @@ class Item(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     available = models.BooleanField(default=True)
     new_item = models.BooleanField(default=True)
+    objects = ItemManager()
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):             #переход по ссылке
+        return reverse('item_detail', kwargs={'item.slug': self.slug})
 
 
 def pre_save_item_slug(sender, instance, *args, **kwargs):
