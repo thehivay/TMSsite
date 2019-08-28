@@ -27,8 +27,12 @@ def item_view(request, item_slug):
 
 
 def product_view(request, product_slug):
-    products = Product.objects.all()
+    products = Product.objects.all()      #!иначе не будет отображать колонка с продуктами
     product = Product.objects.get(slug=product_slug)
-    context = {'product': product, 'products': products}
+    items_of_product = Item.objects.filter(product=product)
+    context = {'product': product,
+               'products': products,
+               'items_of_product': items_of_product,
+               }
     return render(request, 'homepage/product.html', context)
 

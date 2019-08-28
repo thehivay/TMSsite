@@ -1,2 +1,22 @@
 {% extends "homepage/wrapper.html" %}
 
+{% block content %}
+
+<div class="col-sm-12">
+    <h3 style="color: #ecb244"><strong>{{ product.name }}</strong></h3>
+    <hr>
+    <div class="container" style="color: white">
+        {% for item in items_of_product %}
+        <div class="col-sm-4">
+            <img src="{{item.image.url}}" class="card-img" alt="...">
+            <h5 class="card-title">{{item.title}}</h5>
+            <h5 class="card-title">{{item.price}}</h5>
+            <a href="#" class="btn btn-success btn-lg">Добавить в корзину</a>
+        </div>
+        {% endfor %}
+<!--    {{ items_of_product }}-->
+    </div>
+
+</div>
+
+{% endblock %}
