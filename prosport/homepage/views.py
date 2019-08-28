@@ -19,14 +19,16 @@ def address(request):
     return render(request, 'homepage/address.html', context)
 
 
-def product(request, product_slug):            # переход по ссылке
-    products = Product.objects.get(product_slug)
-    context = {'products': products}
-    return render(request, 'homepage/product.html', context)
-
-
-def item(request, item_slug):
-    items = Item.objects.get(item_slug)
-    context = {'items': items}
+def item_view(request, item_slug):
+    products = Product.objects.all()
+    item = Item.objects.get(slug=item_slug)
+    context = {'item': item, 'products': products}
     return render(request, 'homepage/item.html', context)
+
+
+def product_view(request, product_slug):
+    products = Product.objects.all()
+    product = Product.objects.get(slug=product_slug)
+    context = {'product': product, 'products': products}
+    return render(request, 'homepage/product.html', context)
 

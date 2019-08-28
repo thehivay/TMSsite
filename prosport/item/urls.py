@@ -6,6 +6,6 @@
 # urlpatterns = [
 #     path('', views.index, name='index'),
 #     path('address/', views.address, name='address'),
-#     path('product/', views.product, name='product_detail'),
-#     path('item/', views.item, name='item_detail'),
+#     path('product/(<product_slug>)', views.product, name='product_detail'),
+#     path('item/(<item_slug>)', views.item, name='item_detail'),
 # ]

@@ -23,7 +23,7 @@ class Product(models.Model):
         return self.name
 
     def get_absolute_url(self):             #переход по ссылке
-        return reverse('product_detail', kwargs={'slug': self.slug})
+        return reverse('product_detail', kwargs={'product_slug': self.slug})
 
 
 def pre_save_product_slug(sender, instance, *args, **kwargs):
@@ -64,7 +64,10 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):             #переход по ссылке
-        return reverse('item_detail', kwargs={'item.slug': self.slug})
+        return reverse('item_detail', kwargs={'item_slug': self.slug})
+
+    # def get_absolute_url(self):
+    #     return reverse('people.views.details', args=[str(self.id)])   ex.
 
 
 def pre_save_item_slug(sender, instance, *args, **kwargs):

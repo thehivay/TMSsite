@@ -64,7 +64,7 @@
         <div class="col-lg-3 order-1 order-lg-1">
             <a href="/" class="list-group-item list-group-item-action list-group-item-dark"><h2>Meню</h2></a>
             {% for product in products %}
-            <a href="#" class="list-group-item list-group-item-action"><h5>{{product.name}}</h5></a>
+            <a href="{{product.get_absolute_url}}" class="list-group-item list-group-item-action"><h5>{{product.name}}</h5></a>
             {% endfor %}
         </div>
         <div class="col order-2 order-lg-1">
